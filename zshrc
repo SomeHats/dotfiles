@@ -126,3 +126,5 @@ PERL_MM_OPT="INSTALL_BASE=/Users/somehats/perl5"; export PERL_MM_OPT;
 eval "$(direnv hook zsh)"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

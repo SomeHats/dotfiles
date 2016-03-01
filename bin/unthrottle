@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo ipfw delete 100
+sudo ipfw pipe 1 delete

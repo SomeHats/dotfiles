@@ -57,7 +57,7 @@ powerline-daemon -q
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/opt/llvm/bin:$PATH
-export PATH=$HOME/Documents/bin:$PATH
+export PATH=$HOME/.bin:$PATH
 export PATH=$HOME/Documents/nim-0.10.2/bin:$PATH
 export PATH=$HOME/Library/Haskell/bin:$PATH
 export PATH=$HOME/.nimble/bin:$PATH

@@ -15,5 +15,8 @@ brew install python3
 brew install s3cmd
 brew install coreutils
 brew install zsh-syntax-highlighting
+brew install rust
 
 pip install powerline-status
+
+npm install --global nodemon gulp bower forever

@@ -2,7 +2,8 @@
 
 set -x
 
-ln -sf $PWD/zshrc ~/.zshrc
+ln -s $PWD/zshrc ~/.zshrc
+ln -s $PWD/bin ~/.bin
 
 mkdir -p config/nvim/bundle
 mkdir -p config/nvim/_backup
@@ -11,4 +12,4 @@ cd config/nvim/bundle
 git clone https://github.com/Shougo/neobundle.vim.git
 cd -
 mkdir -p ~/.config
-ln -sf $PWD/config/nvim ~/.config/nvim
+ln -s $PWD/config/nvim ~/.config/nvim

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# First add a rule for all local traffic to port 80 to go into pipe 1
+# 100 is the rule number which will be used for referencing the rule later
+sudo ipfw add 100 pipe 1 ip from 127.0.0.1 to 127.0.0.1
+ 
+# To display the rule use
+# sudo ipfw show 100
+ 
+# configure the settings of the pipe as you please
+# 750kbit/s bandwidth
+sudo ipfw pipe 1 config bw 750Kbit
+# 250ms lag
+# sudo ipfw pipe 1 config delay 250ms
+# 20% random packet loss
+# sudo ipfw pipe 1 config plr 0.2
+
+sudo ipfw show 100

@@ -14,4 +14,6 @@ brew install python
 brew install python3
 brew install s3cmd
 brew install coreutils
+brew install zsh-syntax-highlighting
 
+pip install powerline-status

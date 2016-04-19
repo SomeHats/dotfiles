@@ -46,13 +46,13 @@ DEFAULT_USER="somehats"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bower brew coffee colored-man colorize copydir copyfile dircycle extract fabric heroku lol node npm nvm osx pip sublime themes zsh-syntax-highlighting)
+plugins=(git bower brew coffee colored-man colorize copydir copyfile dircycle extract fabric heroku node npm nvm osx pip sublime themes zsh-syntax-highlighting alias-tips)
 
 # User configuration
 
 # Powerline:
 powerline-daemon -q
-. /Library/Python/2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
@@ -68,6 +68,7 @@ export GOPATH=$HOME/Projects/go
 export PATH=$GOPATH/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
+source ~/.zshrc-private
 
 alias ccat="colorize"
 
@@ -77,7 +78,9 @@ s() {
 
 alias cb=current_branch
 alias eak="cd /Users/somehats/Projects/EAK"
+alias mg="cd /Users/somehats/Projects/musicglue"
 alias vim="nvim"
+alias gprom="git pull --rebase origin master"
 # alias npm=gifi
 
 export EDITOR="nvim"
@@ -120,11 +123,18 @@ export NVM_DIR="/Users/somehats/.nvm"
 PERL_MB_OPT="--install_base \"/Users/somehats/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/somehats/perl5"; export PERL_MM_OPT;
 
-
-. /Users/somehats/torch/install/bin/torch-activate
+# . /Users/somehats/torch/install/bin/torch-activate
 
 eval "$(direnv hook zsh)"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PLATFORM_PATH=$HOME/Projects/musicglue/platform
+
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
+export ZSH_PLUGINS_ALIAS_TIPS_EXPAND=1
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -5,16 +5,20 @@ call neobundle#begin(expand('~/.config/nvim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc.vim', {'build': 'make -f make_mac.mak'}
 
+" NeoBundle 'Valloric/YouCompleteMe', {'build': 'git submodule update --init --recursive && python install.py --clang-completer --gocode-completer --tern-completer --racer-completer'}
+" NeoBundleLazy 'facebook/vim-flow', {'autoload': {'filetypes': 'javascript'}}
 NeoBundle 'Quramy/tsuquyomi'
 NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Valloric/YouCompleteMe', {'build': 'git submodule update --init --recursive && python install.py --clang-completer --gocode-completer --tern-completer --racer-completer'}
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'argtextobj.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'carlitux/deoplete-ternjs', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'digitaltoad/vim-pug'
+NeoBundle 'dyng/ctrlsf.vim'
+NeoBundle 'easymotion/vim-easymotion'
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'elmcast/elm-vim'
 NeoBundle 'fatih/vim-go'
@@ -22,15 +26,18 @@ NeoBundle 'geoffharcourt/one-dark.vim'
 NeoBundle 'gkz/vim-ls'
 NeoBundle 'guns/vim-clojure-highlight'
 NeoBundle 'guns/vim-clojure-static'
+NeoBundle 'hashivim/vim-terraform'
+NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'luochen1990/rainbow'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'moll/vim-bbye'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'neovim/node-host'
-NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'reedes/vim-wordy'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'scrooloose/nerdtree'
@@ -228,6 +235,39 @@ set rtp+=/usr/local/lib/node_modules/typescript-tools/
 let g:syntastic_typescript_checkers = ['tslint']
 
 let g:syntastic_javascript_checkers = ['eslint']
+
+" YCM
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" Deoplete
+inoremap <silent><expr> <Tab>
+  \ pumvisible() ? "\<C-n>" :
+	\ deoplete#mappings#manual_complete()
+
+let g:deoplete#enable_at_startup = 1
+set completeopt="menu"
+
+" Flow
+au BufRead,BufNewFile *.flow set filetype=javascript
+
+" Easymotion
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Easymotion directions
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+let g:EasyMotion_smartcase = 1 " Case insensitive
 
 " when vimrc is edited, reload it
 autocmd! bufwritepost init.vim source $MYVIMRC

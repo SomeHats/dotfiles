@@ -1,6 +1,6 @@
 #!/bin/sh
 
 cd config/nvim/bundle
-git clone https://github.com/Valloric/YouCompleteMe.git
+git clone --recursive https://github.com/Valloric/YouCompleteMe.git
 cd YouCompleteMe
-./install.py --clang-compelter --gocode-completer --tern-completer --racer-completer
+./install.py --clang-completer --gocode-completer --tern-completer --racer-completer

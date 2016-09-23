@@ -10,11 +10,12 @@ NeoBundle 'Shougo/vimproc.vim', {'build': 'make -f make_mac.mak'}
 NeoBundle 'Quramy/tsuquyomi'
 NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'Shougo/unite.vim'
+" NeoBundle 'steelsojka/deoplete-flow'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'argtextobj.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'carlitux/deoplete-ternjs', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
+" NeoBundle 'carlitux/deoplete-ternjs', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'digitaltoad/vim-pug'
 NeoBundle 'dyng/ctrlsf.vim'
@@ -28,7 +29,7 @@ NeoBundle 'guns/vim-clojure-highlight'
 NeoBundle 'guns/vim-clojure-static'
 NeoBundle 'hashivim/vim-terraform'
 NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'jiangmiao/auto-pairs'
+" NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'luochen1990/rainbow'
@@ -56,6 +57,10 @@ NeoBundle 'typedclojure/vim-typedclojure'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'wavded/vim-stylus'
+NeoBundle 'joshdick/airline-onedark.vim'
+NeoBundle 'joshdick/onedark.vim'
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+NeoBundle 'rizzatti/dash.vim'
 
 call neobundle#end()
 filetype plugin indent on
@@ -70,12 +75,12 @@ set directory=~/.config/nvim/_temp/      " where to put swap files.
 
 " I like dark colour schemes
 set background=dark
-colorscheme solarized
+colorscheme onedark
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
+let g:airline_theme='onedark'
 
 " Ruler
 set colorcolumn=100
@@ -94,10 +99,10 @@ endfunction
 
 " I originally had some issues with highlighting and my gitgutter plugin. This
 " fixes hat.
-highlight SignColumn ctermbg=0
-highlight GitGutterAdd ctermbg=0 ctermfg=2
-highlight GitGutterChange ctermbg=0 ctermfg=3
-highlight GitGutterDelete ctermbg=0 ctermfg=1
+" highlight SignColumn ctermbg=0
+" highlight GitGutterAdd ctermbg=0 ctermfg=2
+" highlight GitGutterChange ctermbg=0 ctermfg=3
+" highlight GitGutterDelete ctermbg=0 ctermfg=1
 
 " Get rid of the delay when hitting esc!
 set timeoutlen=1000 ttimeoutlen=0
@@ -212,6 +217,8 @@ map <right> :bn<CR>
 map <left> :bp<CR>
 map <leader>b :b#<CR>
 
+map <leader>d <Plug>DashSearch
+
 nmap <F6> :set invnumber<CR>
 nnoremap <F5> :set relativenumber!<CR>
 
@@ -235,6 +242,7 @@ set rtp+=/usr/local/lib/node_modules/typescript-tools/
 let g:syntastic_typescript_checkers = ['tslint']
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_scss_checkers = []
 
 " YCM
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -246,6 +254,9 @@ inoremap <silent><expr> <Tab>
 	\ deoplete#mappings#manual_complete()
 
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_debug = 1
+let g:deoplete#file#enable_buffer_path = 1
+" call deoplete#enable_logging("DEBUG", "./deoplete.log")
 set completeopt="menu"
 
 " Flow

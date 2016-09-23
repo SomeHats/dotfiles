@@ -62,6 +62,7 @@ export PATH=$HOME/Documents/nim-0.10.2/bin:$PATH
 export PATH=$HOME/Library/Haskell/bin:$PATH
 export PATH=$HOME/.nimble/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export GOPATH=$HOME/Projects/go
@@ -81,6 +82,10 @@ alias eak="cd /Users/somehats/Projects/EAK"
 alias mg="cd /Users/somehats/Projects/musicglue"
 alias vim="nvim"
 alias gprom="git pull --rebase origin master"
+alias git-delete-merged='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
+function gpcb {
+  git push -u origin `cb`
+}
 # alias npm=gifi
 
 export EDITOR="nvim"

@@ -4,6 +4,7 @@ set -x
 
 ln -s $PWD/zshrc ~/.zshrc
 ln -s $PWD/bin ~/.bin
+touch ~/.zshrc-private
 
 mkdir -p config/nvim/bundle
 mkdir -p config/nvim/_backup

@@ -52,7 +52,11 @@ plugins=(git bower brew coffee colored-man colorize copydir copyfile dircycle ex
 
 # Powerline:
 powerline-daemon -q
-. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+if [[ -e /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+  . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+elif [[ -e /Library/Python/2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+  . /Library/Python/2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
 
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH

@@ -54,13 +54,15 @@ NeoBundle 'tpope/vim-salve'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'typedclojure/vim-typedclojure'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
+" NeoBundle 'vim-airline/vim-airline'
+" NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'wavded/vim-stylus'
-NeoBundle 'joshdick/airline-onedark.vim'
+" NeoBundle 'joshdick/airline-onedark.vim'
 NeoBundle 'joshdick/onedark.vim'
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 'rizzatti/dash.vim'
+NeoBundle 'ap/vim-buftabline'
+NeoBundle 'itchyny/lightline.vim'
 
 call neobundle#end()
 filetype plugin indent on
@@ -78,9 +80,9 @@ set background=dark
 colorscheme onedark
 
 " Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme='onedark'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme='onedark'
 
 " Ruler
 set colorcolumn=100

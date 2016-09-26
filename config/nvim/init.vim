@@ -94,9 +94,6 @@ colorscheme onedark
 " let g:airline_powerline_fonts = 1
 " let g:airline_theme='onedark'
 
-" Speed up lightline:
-autocmd bufenter autocmd! lightline ColorScheme *
-
 " buftabline
 let g:buftabline_indicators = 1
 let g:buftabline_separators = 1
@@ -104,6 +101,18 @@ highlight TabLineFill guibg=#383c44
 highlight TabLine guibg=#383c44 guifg=#737d93
 highlight PmenuSel guibg=#383c44 guifg=#61afef
 highlight TabLineSel guibg=#61afef guifg=#282c34
+
+" Status line:
+set laststatus=2
+set statusline=
+set statusline +=%1*\ %n\ %*            "buffer number
+set statusline +=%3*%y%*                "file type
+set statusline +=%4*\ %<%F%*            "full path
+set statusline +=%2*%m%*                "modified flag
+set statusline +=%1*%=%5l%*             "current line
+set statusline +=%2*/%L%*               "total lines
+set statusline +=%1*%4v\ %*             "virtual column number
+set statusline +=%2*0x%04B\ %*          "character under cursor
 
 " Ruler
 set colorcolumn=100

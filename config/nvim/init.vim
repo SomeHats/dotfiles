@@ -62,7 +62,7 @@ NeoBundle 'joshdick/onedark.vim'
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'ap/vim-buftabline'
-NeoBundle 'itchyny/lightline.vim'
+" NeoBundle 'itchyny/lightline.vim'
 
 call neobundle#end()
 filetype plugin indent on
@@ -75,6 +75,16 @@ syntax on
 set backupdir=~/.config/nvim/_backup/    " where to put backup files.
 set directory=~/.config/nvim/_temp/      " where to put swap files.
 
+" Enable true colour:
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
 " I like dark colour schemes
 set background=dark
 colorscheme onedark
@@ -83,6 +93,17 @@ colorscheme onedark
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline_powerline_fonts = 1
 " let g:airline_theme='onedark'
+
+" Speed up lightline:
+autocmd bufenter autocmd! lightline ColorScheme *
+
+" buftabline
+let g:buftabline_indicators = 1
+let g:buftabline_separators = 1
+highlight TabLineFill guibg=#383c44
+highlight TabLine guibg=#383c44 guifg=#737d93
+highlight PmenuSel guibg=#383c44 guifg=#61afef
+highlight TabLineSel guibg=#61afef guifg=#282c34
 
 " Ruler
 set colorcolumn=100
@@ -101,7 +122,7 @@ endfunction
 
 " I originally had some issues with highlighting and my gitgutter plugin. This
 " fixes hat.
-" highlight SignColumn ctermbg=0
+highlight SignColumm guibg=#383c44
 " highlight GitGutterAdd ctermbg=0 ctermfg=2
 " highlight GitGutterChange ctermbg=0 ctermfg=3
 " highlight GitGutterDelete ctermbg=0 ctermfg=1

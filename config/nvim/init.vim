@@ -6,11 +6,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc.vim', {'build': 'make -f make_mac.mak'}
 
 " NeoBundle 'Valloric/YouCompleteMe', {'build': 'git submodule update --init --recursive && python install.py --clang-completer --gocode-completer --tern-completer --racer-completer'}
-" NeoBundleLazy 'facebook/vim-flow', {'autoload': {'filetypes': 'javascript'}}
+NeoBundleLazy 'facebook/vim-flow', {'autoload': {'filetypes': 'javascript'}}
 NeoBundle 'Quramy/tsuquyomi'
 NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'Shougo/unite.vim'
-" NeoBundle 'steelsojka/deoplete-flow'
+NeoBundle 'steelsojka/deoplete-flow'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'argtextobj.vim'
@@ -144,7 +144,7 @@ set incsearch " Dynamically update searches as typed
 set nowrap
 set scrolloff=5 " Get vim to show a few lines above and below the cursor when scrolling
 set shiftwidth=2 " # of spaces for indenting
-set smartcase
+set smartcase " make searching only case sensitive when there are capitals
 set tabstop=2
 set title " Show filename in window title bar
 set wildignore+=*/node_modules/*,*/tmp/*,*.swp,*/dist/*,*/public/*,*/bower_components/*,*/gulp-cache/* " Ignore these files when searching for stuff
@@ -190,6 +190,10 @@ command! Q q
 command! Qa qa
 command! QA qa
 command! W w
+command! Vs vs
+command! VS vs
+command! Sp sp
+command! SP sp
 
 " Make terminal a little easier to work with
 :tnoremap <C-w>h <C-\><C-n><C-w>h
@@ -284,6 +288,8 @@ set completeopt="menu"
 
 " Flow
 au BufRead,BufNewFile *.flow set filetype=javascript
+let g:flow#enable = 0
+
 
 " Easymotion
 map  <Leader>f <Plug>(easymotion-bd-f)

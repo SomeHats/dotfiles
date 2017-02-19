@@ -63,6 +63,10 @@ NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'ap/vim-buftabline'
 " NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'snoe/nvim-parinfer.js'
+NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'slashmili/alchemist.vim'
+NeoBundle 'cespare/vim-toml'
 
 call neobundle#end()
 filetype plugin indent on
@@ -265,6 +269,9 @@ nnoremap <leader>ev :e ~/.config/nvim/init.vim<CR>
 
 " Disable markdown folding
 let g:vim_markdown_folding_disabled=1
+
+" Markdown spell-check
+autocmd BufRead,BufEnter *.md set spell
 
 " Go imports:
 let g:go_fmt_command = "goimports"

@@ -85,6 +85,7 @@ alias cb=current_branch
 alias eak="cd /Users/somehats/Projects/EAK"
 alias mg="cd /Users/somehats/Projects/musicglue"
 alias vim="nvim"
+alias v="vim"
 alias gprom="git pull --rebase origin master"
 alias git-delete-merged='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 function gpcb {
@@ -129,6 +130,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export NVM_DIR="/Users/somehats/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
 PERL_MB_OPT="--install_base \"/Users/somehats/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/somehats/perl5"; export PERL_MM_OPT;
 
@@ -136,7 +139,6 @@ PERL_MM_OPT="INSTALL_BASE=/Users/somehats/perl5"; export PERL_MM_OPT;
 
 eval "$(direnv hook zsh)"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 

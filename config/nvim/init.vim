@@ -1,76 +1,88 @@
-" Init NeoBundle
-set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.config/nvim/bundle'))
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc.vim', {'build': 'make -f make_mac.mak'}
+" Required:
+set runtimepath+=~/.config/nvim/_dein/repos/github.com/Shougo/dein.vim
 
-" NeoBundle 'Valloric/YouCompleteMe', {'build': 'git submodule update --init --recursive && python install.py --clang-completer --gocode-completer --tern-completer --racer-completer'}
-NeoBundleLazy 'facebook/vim-flow', {'autoload': {'filetypes': 'javascript'}}
-NeoBundle 'Quramy/tsuquyomi'
-NeoBundle 'Shougo/deoplete.nvim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'steelsojka/deoplete-flow'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'argtextobj.vim'
-NeoBundle 'bronson/vim-trailing-whitespace'
-" NeoBundle 'carlitux/deoplete-ternjs', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'digitaltoad/vim-pug'
-NeoBundle 'dyng/ctrlsf.vim'
-NeoBundle 'easymotion/vim-easymotion'
-NeoBundle 'ekalinin/Dockerfile.vim'
-NeoBundle 'elmcast/elm-vim'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'geoffharcourt/one-dark.vim'
-NeoBundle 'gkz/vim-ls'
-NeoBundle 'guns/vim-clojure-highlight'
-NeoBundle 'guns/vim-clojure-static'
-NeoBundle 'hashivim/vim-terraform'
-NeoBundle 'jelera/vim-javascript-syntax'
-" NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'leafgarland/typescript-vim'
-NeoBundle 'luochen1990/rainbow'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'moll/vim-bbye'
-NeoBundle 'mustache/vim-mustache-handlebars'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'neovim/node-host'
-NeoBundle 'reedes/vim-wordy'
-NeoBundle 'rust-lang/rust.vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'tpope/vim-classpath'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'tpope/vim-fireplace'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-projectionist'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-salve'
-NeoBundle 'tpope/vim-speeddating'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'typedclojure/vim-typedclojure'
-" NeoBundle 'vim-airline/vim-airline'
-" NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'wavded/vim-stylus'
-" NeoBundle 'joshdick/airline-onedark.vim'
-NeoBundle 'joshdick/onedark.vim'
-NeoBundle 'Xuyuanp/nerdtree-git-plugin'
-NeoBundle 'rizzatti/dash.vim'
-NeoBundle 'ap/vim-buftabline'
-" NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'snoe/nvim-parinfer.js'
-NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'slashmili/alchemist.vim'
-NeoBundle 'cespare/vim-toml'
+" Required:
+if dein#load_state(expand('~/.config/nvim/_dein'))
+  call dein#begin(expand('~/.config/nvim/_dein'))
 
-call neobundle#end()
+  " Let dein manage dein
+  " Required:
+  call dein#add(expand('~/.config/nvim/_dein/repos/github.com/Shougo/dein.vim'))
+
+  " Add or remove your plugins here:
+  call dein#add('Quramy/tsuquyomi')
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/vimproc.vim', { 'build': 'make -f make_mac.mak' })
+  call dein#add('Xuyuanp/nerdtree-git-plugin')
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('altercation/vim-colors-solarized')
+  call dein#add('ap/vim-buftabline')
+  call dein#add('argtextobj.vim')
+  call dein#add('bronson/vim-trailing-whitespace')
+  call dein#add('cespare/vim-toml')
+  call dein#add('digitaltoad/vim-pug')
+  call dein#add('dyng/ctrlsf.vim')
+  call dein#add('easymotion/vim-easymotion')
+  call dein#add('ekalinin/Dockerfile.vim')
+  call dein#add('elixir-lang/vim-elixir')
+  call dein#add('elmcast/elm-vim')
+  call dein#add('facebook/vim-flow')
+  call dein#add('fatih/vim-go')
+  call dein#add('geoffharcourt/one-dark.vim')
+  call dein#add('gkz/vim-ls')
+  call dein#add('guns/vim-clojure-highlight')
+  call dein#add('guns/vim-clojure-static')
+  call dein#add('hashivim/vim-terraform')
+  call dein#add('jelera/vim-javascript-syntax')
+  call dein#add('joshdick/onedark.vim')
+  call dein#add('leafgarland/typescript-vim')
+  call dein#add('luochen1990/rainbow')
+  call dein#add('mattn/emmet-vim')
+  call dein#add('moll/vim-bbye')
+  call dein#add('mustache/vim-mustache-handlebars')
+  call dein#add('mxw/vim-jsx')
+  call dein#add('nathanaelkane/vim-indent-guides')
+  call dein#add('neovim/node-host')
+  call dein#add('reedes/vim-wordy')
+  call dein#add('rizzatti/dash.vim')
+  call dein#add('rust-lang/rust.vim')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('scrooloose/syntastic')
+  call dein#add('slashmili/alchemist.vim')
+  call dein#add('snoe/nvim-parinfer.js')
+  call dein#add('steelsojka/deoplete-flow')
+  call dein#add('tpope/vim-classpath')
+  call dein#add('tpope/vim-commentary')
+  call dein#add('tpope/vim-dispatch')
+  call dein#add('tpope/vim-fireplace')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-projectionist')
+  call dein#add('tpope/vim-repeat')
+  call dein#add('tpope/vim-salve')
+  call dein#add('tpope/vim-speeddating')
+  call dein#add('tpope/vim-surround')
+  call dein#add('typedclojure/vim-typedclojure')
+  call dein#add('wavded/vim-stylus')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
 filetype plugin indent on
-NeoBundleCheck
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
 
 set number
 syntax on
@@ -135,7 +147,7 @@ endfunction
 
 " I originally had some issues with highlighting and my gitgutter plugin. This
 " fixes hat.
-highlight SignColumm guibg=#383c44
+" highlight SignColumm guibg=#383c44
 " highlight GitGutterAdd ctermbg=0 ctermfg=2
 " highlight GitGutterChange ctermbg=0 ctermfg=3
 " highlight GitGutterDelete ctermbg=0 ctermfg=1
@@ -147,13 +159,13 @@ let g:bufferline_echo = 0
 " Misc
 set backspace=indent,eol,start " More sensible backspace behaviour
 set cursorline " Highlight current line
-set esckeys " Allow cursor keys in insert mode
 set expandtab " Expand tabs to spaces
 set hidden " Remember marks and undo history on hidden buffers
 set history=1000 " Increase history from default 20
 set hlsearch " Highlight searches
 set ignorecase
 set incsearch " Dynamically update searches as typed
+set mouse=a
 set nowrap
 set scrolloff=5 " Get vim to show a few lines above and below the cursor when scrolling
 set shiftwidth=2 " # of spaces for indenting
@@ -299,6 +311,7 @@ inoremap <silent><expr> <Tab>
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_debug = 1
 let g:deoplete#file#enable_buffer_path = 1
+" let g:deoplete#enable_profile = 1
 " call deoplete#enable_logging("DEBUG", "./deoplete.log")
 set completeopt="menu"
 

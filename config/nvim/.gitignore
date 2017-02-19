@@ -2,3 +2,5 @@ _backup
 _temp
 bundle
 .init.vim-rplugin~
+_dein
+!_dein/repos/github.com/Shougo/dein.vim

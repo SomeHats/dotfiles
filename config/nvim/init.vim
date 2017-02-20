@@ -26,6 +26,7 @@ if dein#load_state(expand('~/.config/nvim/_dein'))
   call dein#add('argtextobj.vim')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('cespare/vim-toml')
+  call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('digitaltoad/vim-pug')
   call dein#add('dyng/ctrlsf.vim')
   call dein#add('easymotion/vim-easymotion')
@@ -41,6 +42,8 @@ if dein#load_state(expand('~/.config/nvim/_dein'))
   call dein#add('hashivim/vim-terraform')
   call dein#add('jelera/vim-javascript-syntax')
   call dein#add('joshdick/onedark.vim')
+  call dein#add('jparise/vim-graphql')
+  call dein#add('kchmck/vim-coffee-script')
   call dein#add('leafgarland/typescript-vim')
   call dein#add('luochen1990/rainbow')
   call dein#add('mattn/emmet-vim')
@@ -80,9 +83,9 @@ filetype plugin indent on
 syntax enable
 
 " If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
+" if dein#check_install()
+  " call dein#install()
+" endif
 
 set number
 syntax on

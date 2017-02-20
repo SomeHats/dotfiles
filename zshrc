@@ -91,6 +91,7 @@ alias git-delete-merged='git branch --merged master | grep -v "\* master" | xarg
 function gpcb {
   git push -u origin `cb`
 }
+alias hpr="hub pull-request"
 # alias npm=gifi
 
 export EDITOR="nvim"
@@ -149,3 +150,5 @@ export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 export ZSH_PLUGINS_ALIAS_TIPS_EXPAND=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOME/.yarn/bin:$PATH"

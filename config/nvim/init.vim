@@ -33,7 +33,6 @@ if dein#load_state(expand('~/.config/nvim/_dein'))
   call dein#add('ekalinin/Dockerfile.vim')
   call dein#add('elixir-lang/vim-elixir')
   call dein#add('elmcast/elm-vim')
-  call dein#add('facebook/vim-flow')
   call dein#add('fatih/vim-go')
   call dein#add('geoffharcourt/one-dark.vim')
   call dein#add('gkz/vim-ls')
@@ -52,6 +51,7 @@ if dein#load_state(expand('~/.config/nvim/_dein'))
   call dein#add('mxw/vim-jsx')
   call dein#add('nathanaelkane/vim-indent-guides')
   call dein#add('neovim/node-host')
+  call dein#add('pangloss/vim-javascript')
   call dein#add('reedes/vim-wordy')
   call dein#add('rizzatti/dash.vim')
   call dein#add('rust-lang/rust.vim')
@@ -317,6 +317,9 @@ let g:deoplete#file#enable_buffer_path = 1
 " let g:deoplete#enable_profile = 1
 " call deoplete#enable_logging("DEBUG", "./deoplete.log")
 set completeopt="menu"
+
+" JS + JSX
+let g:jsx_ext_required = 0
 
 " Flow
 au BufRead,BufNewFile *.flow set filetype=javascript

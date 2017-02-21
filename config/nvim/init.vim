@@ -44,8 +44,6 @@ if dein#load_state(expand('~/.config/nvim/_dein'))
   call dein#add('jparise/vim-graphql')
   call dein#add('kchmck/vim-coffee-script')
   call dein#add('leafgarland/typescript-vim')
-  call dein#add('luochen1990/rainbow')
-  call dein#add('mattn/emmet-vim')
   call dein#add('moll/vim-bbye')
   call dein#add('mustache/vim-mustache-handlebars')
   call dein#add('mxw/vim-jsx')
@@ -161,8 +159,9 @@ let g:bufferline_echo = 0
 
 " Misc
 set backspace=indent,eol,start " More sensible backspace behaviour
-set cursorline " Highlight current line
+" set cursorline " Highlight current line
 set expandtab " Expand tabs to spaces
+set fillchars+=vert:│ " prettier vertical split
 set hidden " Remember marks and undo history on hidden buffers
 set history=1000 " Increase history from default 20
 set hlsearch " Highlight searches

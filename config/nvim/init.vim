@@ -247,6 +247,27 @@ map <Leader>, <C-^>
 map <Leader>ls :buffers<CR>
 map <leader>b :b#<cr>
 
+function! BufferDelete()
+  if &modified
+    echohl ErrorMsg
+    echomsg "No write since last change. Not closing buffer."
+    echohl NONE
+  else
+    let s:total_nr_buffers = len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
+
+    if s:total_nr_buffers == 1
+      bdelete
+      echo "Buffer deleted. Create new buffer."
+    else
+      bprevious
+      bdelete #
+      echo "Buffer deleted."
+    endif
+  endif
+endfunction
+
+map <leader>q :call BufferDelete()<CR>
+
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
   exec ':%s/ \+$//gc'
@@ -319,6 +340,7 @@ set completeopt="menu"
 
 " JS + JSX
 let g:jsx_ext_required = 0
+let g:javascript_plugin_flow = 1
 
 " Flow
 au BufRead,BufNewFile *.flow set filetype=javascript

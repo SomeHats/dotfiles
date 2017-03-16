@@ -85,7 +85,7 @@ alias cb=current_branch
 alias eak="cd /Users/somehats/Projects/EAK"
 alias mg="cd /Users/somehats/Projects/musicglue"
 alias vim="nvim"
-alias v="vim"
+alias v="vimr"
 alias gprom="git pull --rebase origin master"
 alias git-delete-merged='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 function gpcb {
